@@ -9,9 +9,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule} from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
 import { MarketComponent } from './market/market.component';
-import { SignInComponent } from './sign-in/sign-in.component';
+
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
+
 import { NewsComponent } from './news/news.component';
 import { CoinInDetailComponent } from './coin-in-detail/coin-in-detail.component';
 
@@ -23,9 +23,9 @@ import { CoinInDetailComponent } from './coin-in-detail/coin-in-detail.component
     AppFooterComponent,
     HomePageComponent,
     MarketComponent,
-    SignInComponent,
+  
     PageNotFoundComponent,
-    SignUpComponent,
+ 
     NewsComponent,
     CoinInDetailComponent
   ],

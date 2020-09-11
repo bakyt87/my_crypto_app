@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GsapService } from '../gsap.service'
 declare var VANTA;
 @Component({
   selector: 'app-home-page',
@@ -6,8 +7,9 @@ declare var VANTA;
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
+ 
 
-  constructor() { }
+  constructor(private _gsapService: GsapService) { }
 
   ngOnInit(): void {
     VANTA.WAVES({
@@ -25,6 +27,18 @@ export class HomePageComponent implements OnInit {
   waveSpeed: 0.95,
   zoom: 0.65
     })
+
+    this.fOpeningAnim();
+  
+    
   }
+  public fOpeningAnim() {
+    const anim = this._gsapService;
+   
+    anim.fFadeFrom ('.display-1',"restart pause resume restart",0,10,-100,'elastic(2, 0.5)');
+  }
+  
+ 
 
 }
+
