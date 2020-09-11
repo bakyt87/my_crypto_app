@@ -1,0 +1,55 @@
+
+<div id="container-detail" style="height:700px;">
+   
+ 
+<h1 style="text-align: left;">{{coin.name}}</h1>
+<img style="text-align:center ;" src="{{coin.image.large}}">
+<table class="table">
+    <thead>
+        <th>NAME (ENG)</th>
+        <th>NAME (RUS):</th>
+        <th>PRICE (USD)</th>
+        <th>PRICE (CAD)</th>
+        <th>PRICE (EUR)</th>
+        <th>PRICE (RUB)</th>
+    </thead>
+    <tbody>
+      <tr>
+       <td>{{coin.id.toUpperCase()}}</td>
+            <td>{{coin.localization.ru.toUpperCase()}}</td>
+            <td><i class="fas fa-dollar-sign" style="color: rgb(37, 71, 163)"></i>{{coin.market_data.current_price.usd}}</td>
+            <td>{{coin.market_data.current_price.cad}}</td>
+            <td><i class="fas fa-euro-sign" style="color: greenyellow"></i>{{coin.market_data.current_price.eur}}</td>
+            <td><i class="fas fa-ruble-sign" style="color: greenyellow"></i>{{coin.market_data.current_price.rub}}</td>
+     </tr>
+    </tbody>
+
+</table>
+
+<table class="table">
+    <thead>
+        
+        <th>Price change in CAD</th>
+        <th>LOGO</th>
+        <th>1 HOUR</th>
+        <th>24 HOURS</th>
+        <th>7 DAYS</th>
+        <th>30 DAYS</th>
+        <th>1 YEAR</th>
+    </thead>
+    <tbody>
+      <tr>
+       <td></td>
+       <td><img src="{{coin.image.small}}"></td>
+        <td>{{coin.market_data.price_change_percentage_1h_in_currency.cad}}</td>
+        <td>{{coin.market_data.price_change_percentage_24h_in_currency.cad}}</td>
+        <td>{{coin.market_data.price_change_percentage_7d_in_currency.cad}}</td>
+        <td>{{coin.market_data.price_change_percentage_30d_in_currency.cad}}</td>
+        <td>{{coin.market_data.price_change_percentage_1y_in_currency.cad}}</td>
+     </tr>
+    </tbody>
+
+</table>
+
+
+</div>

@@ -1,0 +1,30 @@
+
+<div id="container-list" style="height:4000px;">
+    <h1>Crypto Market</h1>
+
+        <div>
+            <table class="table">
+                <thead>
+                    <th></th>
+                    <th>NAME</th>
+                    <th>CURRENT PRICE</th>
+                    <th>HIGH 24H</th>
+                    <th>LOW 24H</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let coin of coins" (click)="rowClicked($event, coin.id)">
+                   
+                        <td><img src="{{coin.image.small}}"></td>
+                        <td>{{coin.name}}</td>
+                        <td>{{coin.market_data.current_price.cad}} CAD</td>
+                        <td><i class="fas fa-arrow-up" style="color: greenyellow"></i>{{coin.market_data.high_24h.cad}} CAD</td>
+                        <td><i class="fas fa-arrow-down" style="color:hotpink"></i>{{coin.market_data.low_24h.cad}} CAD</td>
+                    
+                    </tr>
+                </tbody>
+
+            </table>
+       
+       </div>
+</div>

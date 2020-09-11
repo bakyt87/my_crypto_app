@@ -1,1 +1,163 @@
 /* You can add global styles to this file, and also import other style files */
+*
+{
+    margin:0;
+    padding:0;
+}
+.container-fluid{
+    min-width: 100%;
+}
+.container{
+    min-width: 100%;
+}
+nav h1
+{
+    font-family: 'Poiret One', cursive;
+    text-align: center;
+    color: white;
+}
+
+
+.display-1{  font-family: 'Poiret One', cursive;
+text-align: left;}
+.container-fluid h1
+{
+  
+color:white;
+text-align: left;
+
+}
+.container-fluid p
+{
+  
+color:white;
+font-size: 20px;
+
+}
+p h1
+{
+  
+color:white;
+font-size: 20px;
+
+}
+.container-main p h1
+{
+  
+color:white;
+font-size: 20px;
+padding-left: 30px;
+}
+nav
+{
+ 
+    height :10rem;
+    font-family: 'Poiret One', cursive;
+    padding-top: 50px;
+}
+.nav-link
+{
+font-size: 25px;
+display: inline;
+color: white;
+text-decoration: none;
+}
+nav h1 a
+{
+font-family: 'Poiret One', cursive;
+  color: white;
+  text-decoration:none;
+    
+}
+
+.col p 
+{
+    color: white;
+    font-family: 'Poiret One', cursive;
+    font-size: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.display-1{
+    color: white;
+    margin-left: 50px;
+}
+
+label
+{
+   display: block;
+    color: black;
+    font-family: 'Poiret One', cursive;
+    font-size: 30px;
+    font-weight: bold;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+select
+{
+   
+    height: 30px;
+    width: 200px;
+  
+    outline-style: ridge
+}
+input{
+    border-block-color: black;
+    border-start-start-radius: 5px; 
+}
+.form-control
+{
+ border-block-end-width: 2px;
+ border-color: black;
+
+}
+
+
+nav{ width:100%}
+nav-link :hover{
+font-weight: bold;
+text-decoration: overline;
+color:white;
+}
+
+
+th, td
+{
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+}    
+table tr:hover
+{
+    
+    transform:scale(1,1.3);
+}
+footer h6
+{
+   
+    margin-left: 100px;
+    font-family: 'Poiret One', cursive;
+    font-size: 30px;
+    color:white;
+    display: inline;
+}
+#vanta{min-width: 100%;}
+
+#container-market
+{ padding: 100px 100px 100px 100px;
+    height: 450px;
+}
+#container-market {
+ display: grid;
+ grid-template-columns: 50% 50%;
+} 
+h1{
+    text-align: center;
+}
+
+    button{
+        margin-left: 10px;
+    }
+    #vanta-f
+    {padding-top: 50px;
+    }

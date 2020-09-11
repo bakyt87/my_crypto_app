@@ -1,0 +1,59 @@
+    <div id="container-market">
+    <div class="row">
+        <div class="col">
+    <form (ngSubmit)='onSubmit()'>
+    
+        <div class="dropdown">
+            <label>
+                Choose crypto currency
+            </label>
+       
+        <select name="coin" (change)="selectCoinHandler($event)">
+        <option >select</option>
+        <option value="bitcoin">Bitcoin</option>
+        <option value="ethereum">Ethereum</option>
+        <option value="litecoin">Litecoin</option>
+        <option value="dash">Dash</option>
+        <option value="dogecoin">Dogecoin</option>
+        <option value="squarecoin">Squarecoin</option>
+        <option value="ripple">Ripple</option>
+        <option value="stellar">Stellar</option>
+        </select>
+        </div>
+
+
+    <div class="form-group">
+        <label>Choose currency</label> 
+        <select name="currency" (change)="selectCurHandler($event)">
+        <option>select</option>
+            <option value="usd">US Dollar</option>
+            <option value="cad">Canadian Dollar</option>
+            <option value="gbp">Briitish Pound</option>
+            <option value="eur">Euro</option>
+            <option value="aed">Dirham</option>
+            <option value="rub">Rubble</option>
+        </select>
+    </div>
+
+
+        <div class="form-group">
+            <div class="btn-toolbar">
+        <button type="submit" class="btn btn-light btn-sm">Get Quote</button>
+        <button type="reset" class="btn btn-light btn-sm">Reset</button>
+    </div>
+        </div>
+    </form>
+    </div>
+
+  <div class="row">
+    
+      <div class="col">
+    <h1 style="font-family:Bungee Inline">{{coin.toUpperCase()}}</h1>
+    <h1 style="font-family:Bungee Inline" >{{currency.toUpperCase()}}</h1>
+    <h1 style="font-family:Bungee Inline">{{coins}}</h1>
+    </div>
+</div>
+
+    
+    
+    </div>
