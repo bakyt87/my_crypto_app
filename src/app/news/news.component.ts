@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ConfigService } from '../config.service';
 import { Router } from '@angular/router';
 import { CoinInfo } from '../CoinInfo';
-declare var VANTA;
+import { GsapService } from '../gsap.service'
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
@@ -12,27 +12,24 @@ export class NewsComponent implements OnInit {
 
   
   coins: Array<CoinInfo>=[];
-  constructor(private data: ConfigService, private router: Router) { }
+  constructor(private data: ConfigService, private router: Router,private _gsapService: GsapService) { }
 
   ngOnInit(): void {
     this.data.getList().subscribe(data=>{
     this.coins=data;
   })
-  VANTA.WAVES({
-    el: "#container-list",
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
-    minHeight: 200.00,
-    minWidth: 200.00,
-    scale: 1.00,
-    scaleMobile: 1.00,
-    color: 0x13594c,
-    shininess: 150.00,
-    waveHeight: 40.00,
-    waveSpeed: 1.05,
-    zoom: 0.65
-  })
+  this.sidenavAnim();
+  this.marketAnim();
+  }
+  public marketAnim() {
+    const anim = this._gsapService;
+   
+    anim.fFadeFrom2 ('tbody',0,3, 200);
+  }
+  public sidenavAnim() {
+    const anim = this._gsapService;
+   
+    anim.fFadeFrom2 ('.sidenav',0,1, -200);
   }
   rowClicked(e, id){
     this.router.navigate(['/coin-in-detail', id]);

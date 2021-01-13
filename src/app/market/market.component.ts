@@ -4,7 +4,7 @@ import { NgForm } from "@angular/forms";
 import { CoinInfo } from '../CoinInfo';
 import { Router } from '@angular/router';
 
-declare var VANTA;
+import { GsapService } from '../gsap.service'
 
 @Component({
   selector: 'app-market',
@@ -18,27 +18,24 @@ export class MarketComponent implements OnInit {
   currency: any;
   obj:Object;
   
-  constructor(private data: ConfigService, private router: Router) { }
+  constructor(private data: ConfigService, private router: Router, private _gsapService: GsapService) { }
 
   ngOnInit(): void {
     
       this.coin=this.coin;
       this.currency=this.currency
-      VANTA.WAVES({
-        el: "#container-market",
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
-        color: 0x7a7a7a,
-        shininess: 71.00,
-        waveHeight: 18.50,
-        waveSpeed: 0.95,
-       
-      })
+      this.fOpeningAnim();
+      this.sidenavAnim();
+  }
+  public sidenavAnim() {
+    const anim = this._gsapService;
+   
+    anim.fFadeFrom2 ('.sidenav',0,1, -200);
+  }
+  public fOpeningAnim() {
+    const anim = this._gsapService;
+   
+    anim.fFadeFrom ('.col-3',"restart pause resume restart",0,2,100);
   }
   
   selectCoinHandler(event: any){

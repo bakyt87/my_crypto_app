@@ -14,6 +14,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 import { NewsComponent } from './news/news.component';
 import { CoinInDetailComponent } from './coin-in-detail/coin-in-detail.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { CoinInDetailComponent } from './coin-in-detail/coin-in-detail.component
     PageNotFoundComponent,
  
     NewsComponent,
-    CoinInDetailComponent
+    CoinInDetailComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

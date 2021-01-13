@@ -1,41 +1,45 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { CoinInfo } from '../CoinInfo';
+import { ConfigService } from '../config.service';
 import { GsapService } from '../gsap.service'
-declare var VANTA;
+
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
- 
-
-  constructor(private _gsapService: GsapService) { }
+  coin : any;
+  coin2: any;
+  constructor(private data: ConfigService, private data2: ConfigService, private route: ActivatedRoute, private _gsapService: GsapService) { }
 
   ngOnInit(): void {
-    VANTA.WAVES({
-      el: '#vanta',
-      mouseControls: true,
-  touchControls: true,
-  gyroControls: false,
-  minHeight: 200.00,
-  minWidth: 200.00,
-  scale: 1.00,
-  scaleMobile: 1.00,
-  color: 0x0,
-  shininess: 150.00,
-  waveHeight: 20.00,
-  waveSpeed: 0.95,
-  zoom: 0.65
-    })
+   
+      //TODO: Get coin by Id params['id'] and store the result in this.post
+      this.data.getBitcoinData().subscribe( data=>{
+        this.coin= data;
+      })
+      this.data2.getEthereumData().subscribe( data2=>{
+        this.coin2= data2;
+      })
+    
+  
+    
 
     this.fOpeningAnim();
-  
+    this.sidenavAnim();
     
   }
   public fOpeningAnim() {
     const anim = this._gsapService;
    
-    anim.fFadeFrom ('.display-1',"restart pause resume restart",0,10,-100,'elastic(2, 0.5)');
+    anim.fFadeFrom ('.display-1',"restart pause resume restart",0,10,-100);
+  }
+  public sidenavAnim() {
+    const anim = this._gsapService;
+   
+    anim.fFadeFrom2 ('.sidenav',0,1, -200);
   }
   
  

@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ConfigService } from '../config.service';
 import { CoinInfo } from '../CoinInfo';
 import { ActivatedRoute } from '@angular/router';
-declare var VANTA;
+import { GsapService } from '../gsap.service'
 @Component({
   selector: 'app-coin-in-detail',
   templateUrl: './coin-in-detail.component.html',
@@ -11,7 +11,7 @@ declare var VANTA;
 export class CoinInDetailComponent implements OnInit {
   coin : CoinInfo;
   querySub: any;
-  constructor(private data: ConfigService,  private route: ActivatedRoute) { }
+  constructor(private data: ConfigService,  private route: ActivatedRoute,private _gsapService: GsapService) { }
 
   ngOnInit(): void {
     this.querySub = this.route.params.subscribe(params =>{
@@ -21,22 +21,18 @@ export class CoinInDetailComponent implements OnInit {
        
       })
     })
-    VANTA.WAVES({
-      el: "#container-detail",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      scale: 1.00,
-      scaleMobile: 1.00,
-      color: 0x3d5913,
-      shininess: 150.00,
-      waveHeight: 40.00,
-      waveSpeed: 1.05,
-      zoom: 0.91
-    })
+    this.sidenavAnim();
+    this.fOpeningAnim();
+  }
+  public fOpeningAnim() {
+    const anim = this._gsapService;
    
+    anim.fFadeFrom ('.col',"restart pause resume restart",0,2,100);
+  }
+  public sidenavAnim() {
+    const anim = this._gsapService;
+   
+    anim.fFadeFrom2 ('.sidenav',0,1, -200);
   }
   selectCoinHandler(event: any){
     

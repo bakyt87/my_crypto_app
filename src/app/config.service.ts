@@ -11,6 +11,12 @@ export class ConfigService {
 
   constructor(private http: HttpClient) { }
 
+  getBitcoinData():Observable<CoinInfo[]>{
+    return this.http.get<CoinInfo[]>('https://api.coingecko.com/api/v3/coins/bitcoin');
+  }
+  getEthereumData():Observable<CoinInfo[]>{
+    return this.http.get<CoinInfo[]>('https://api.coingecko.com/api/v3/coins/ethereum');
+  }
 
   getAPIData(coin, currency):Observable<CoinInfo[]>{
     return this.http.get<CoinInfo[]>('https://api.coingecko.com/api/v3/simple/price?ids='+coin+'&vs_currencies='+currency);

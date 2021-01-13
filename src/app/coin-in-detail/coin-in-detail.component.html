@@ -1,57 +1,98 @@
 
-<div id="container-detail" style="height:700px;">
+
+
+<div class="sidenav">
+    <!-- Sidebar Header-->
+    
+     <!-- Sidebar Navidation Menus-->
+     <ul class="navbar-nav mr-auto">
+         <br><br><br><br>
+       <li class="nav-item active">
+           
+         <a class="nav-link" routerLink="/home-page" routerLinkActive="active"> | <i class="fas fa-home"></i> | Home
+           <span class="sr-only">(current)</span>
+         </a><hr>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" routerLink="/market" routerLinkActive="active"> | <i class="fas fa-wallet"></i> | Get Quote</a>
+       </li><hr>
+       <li class="nav-item">
+         <a class="nav-link" routerLink="/news" routerLinkActive="active">| <i class="far fa-chart-bar"></i> | Market</a>
+       </li><hr>
+       <li class="nav-item">
+        <a class="nav-link" routerLink="/about" routerLinkActive="active">  | <i class="fas fa-book"></i> | About</a>
+       </li><hr>
+      
+         
+       
+     </ul>
+     
+</div>
+
+
+
+<div class="container">
    
- 
-<h1 style="text-align: center;">{{coin.name}}</h1>
-<img style="  display: block;
-margin-left: auto;
-margin-right: auto;" src="{{coin.image.large}}">
-<table class="table">
-    <thead>
-        <th>NAME</th>
-        <th></th>
-        <th>PRICE (USD)</th>
-        <th>PRICE (CAD)</th>
-        <th>PRICE (EUR)</th>
-        <th>PRICE (RUB)</th>
-    </thead>
-    <tbody>
-      <tr>
-       <td>{{coin.id.toUpperCase()}}</td>
-            <td></td>
-            <td><i class="fas fa-dollar-sign" style="color: greenyellow"></i>{{coin.market_data.current_price.usd}}</td>
-            <td>{{coin.market_data.current_price.cad}}</td>
-            <td><i class="fas fa-euro-sign" style="color: greenyellow"></i>{{coin.market_data.current_price.eur}}</td>
-            <td><i class="fas fa-ruble-sign" style="color: greenyellow"></i>{{coin.market_data.current_price.rub}}</td>
-     </tr>
-    </tbody>
-
-</table>
-
-<table class="table">
-    <thead>
+    <div class="row">
+        <div class="col">
+            <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                <div class="card-header">CRYPTOCURRENCY</div>
+                <div class="card-body">
+                  <h4 class="card-title">{{coin.name}}</h4>
+                  <img style="  display: block;
+            margin-left: auto;
+            margin-right: auto;" src="{{coin.image.large}}"> 
+                </div>
+              </div>
+            
+            
+        </div>
+        <div class="col">
+            <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+                <div class="card-header">{{coin.id.toUpperCase()}}</div>
+                <div class="card-body">
+                  <h4 class="card-title">Current price</h4>
+                          <hr>
+                          <p>USD - {{coin.market_data.current_price.usd}}</p>
+                          <hr>
+                          <p>CAD - {{coin.market_data.current_price.cad}}</p>
+                          <hr>
+                          <p>EURO - {{coin.market_data.current_price.eur}}</p>
+                          <hr>
+                          <p>RUBLE - {{coin.market_data.current_price.rub}}</p>
+                   
+                </div>
+              </div>
+           </div>
+    <div class="col">
+        <div class="card text-white bg-danger mb-3" style="max-width: 20rem;">
+            <div class="card-header">PRICE CHANGE (CAD)</div>
+            <div class="card-body">
+             
+              
+                <p class="card-text">1 HRS - {{coin.market_data.price_change_percentage_1h_in_currency.cad}}</p>
+                <hr>
+                <p class="card-text">24 HRS - {{coin.market_data.price_change_percentage_24h_in_currency.cad}}</p>   <hr>
+                <p class="card-text">7 DAYS - {{coin.market_data.price_change_percentage_7d_in_currency.cad}}</p>   <hr>
+                <p class="card-text">30 DAYS - {{coin.market_data.price_change_percentage_30d_in_currency.cad}}</p>   <hr>
+                <p class="card-text">1 YEAR - {{coin.market_data.price_change_percentage_1y_in_currency.cad}}</p>
+            
+            </div>
+          </div>
+       
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
         
-        <th>PRICE CHANGE (CAD)</th>
-        <th></th>
-        <th>1 HOUR</th>
-        <th>24 HOURS</th>
-        <th>7 DAYS</th>
-        <th>30 DAYS</th>
-        <th>1 YEAR</th>
-    </thead>
-    <tbody>
-      <tr>
-       <td></td>
-       <td></td>
-        <td>{{coin.market_data.price_change_percentage_1h_in_currency.cad}}</td>
-        <td>{{coin.market_data.price_change_percentage_24h_in_currency.cad}}</td>
-        <td>{{coin.market_data.price_change_percentage_7d_in_currency.cad}}</td>
-        <td>{{coin.market_data.price_change_percentage_30d_in_currency.cad}}</td>
-        <td>{{coin.market_data.price_change_percentage_1y_in_currency.cad}}</td>
-     </tr>
-    </tbody>
+    </div>
+    
+      </div>
 
-</table>
+
+
+
 
 
 </div>

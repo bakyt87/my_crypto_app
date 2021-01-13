@@ -1,5 +1,35 @@
 
-<div id="container-list" style="height:4000px;">
+<div class="sidenav">
+    <!-- Sidebar Header-->
+    
+     <!-- Sidebar Navidation Menus-->
+     <ul class="navbar-nav mr-auto">
+         <br><br><br><br>
+       <li class="nav-item active">
+           
+         <a class="nav-link" routerLink="/home-page" routerLinkActive="active"> | <i class="fas fa-home"></i> | Home
+           <span class="sr-only">(current)</span>
+         </a><hr>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" routerLink="/market" routerLinkActive="active"> | <i class="fas fa-wallet"></i> | Get Quote</a>
+       </li><hr>
+       <li class="nav-item">
+         <a class="nav-link" routerLink="/news" routerLinkActive="active">| <i class="far fa-chart-bar"></i> | Market</a>
+       </li><hr>
+       <li class="nav-item">
+        <a class="nav-link" routerLink="/about" routerLinkActive="active"> | <i class="fas fa-book"></i> | About</a>
+       </li><hr>
+      
+         
+       
+     </ul>
+     
+</div>
+
+
+
+<div class="container">
     <h1>Crypto Market</h1>
 
         <div>
@@ -7,7 +37,7 @@
                 <thead>
                     <th></th>
                     <th>NAME</th>
-                    <th>CURRENT PRICE</th>
+                    <th>CURRENT PRICE (CAD)</th>
                     <th>HIGH 24H</th>
                     <th>LOW 24H</th>
                     <th></th>
@@ -17,9 +47,9 @@
                    
                         <td><img src="{{coin.image.small}}"></td>
                         <td>{{coin.name}}</td>
-                        <td>{{coin.market_data.current_price.cad}} CAD</td>
-                        <td><i class="fas fa-arrow-up" style="color: greenyellow"></i>{{coin.market_data.high_24h.cad}} CAD</td>
-                        <td><i class="fas fa-arrow-down" style="color:hotpink"></i>{{coin.market_data.low_24h.cad}} CAD</td>
+                        <td>{{coin.market_data.current_price.cad}}</td>
+                        <td ><i class="fas fa-arrow-up" style="color:rgb(90, 221, 90)"></i>  {{coin.market_data.high_24h.cad}} </td>
+                        <td ><i class="fas fa-arrow-down" style="color:rgb(250, 2, 126)"></i>  {{coin.market_data.low_24h.cad}} </td>
                     
                     </tr>
                 </tbody>
